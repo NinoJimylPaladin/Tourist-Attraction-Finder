@@ -21,7 +21,7 @@ body{
    width:700px;
    height:auto;
    object-fit:contain;
-   margin-bottom:450px;
+   margin-bottom:45px;
    margin-top:50px;
 }
 
@@ -30,6 +30,7 @@ body{
     justify-content:center;
     margin-top:50px;
     gap:200px;
+   
     
 }
 .title{
