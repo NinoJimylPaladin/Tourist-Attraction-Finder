@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>Tourist Attraction Finder</title>
-        <link rel="stylesheet" href="signup.css">
+        <link rel="stylesheet" href="assets/signin.css">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
         <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -12,42 +12,35 @@
          
     </head>
     <body>
-        <img class="background-img" src="../../assets/background.png">
+        <img class="background-img" src="assets/background.png">
         
         <div class="wrap">
 
-             <img data-aos="fade-right" data-aos-duration="2000" class="logo-img"   src="../../assets/logo.png">
+            <img data-aos="fade-right" data-aos-duration="2000" class="logo-img"   src="assets/logo.png">
 
             <div data-aos="fade-left" data-aos-duration="2000"class="container">
-                <h1 class="text-form">Create Account</h1>
+                <h1 class="text-form">Welcome Back</h1>
 
                 <span style="color:rgb(8, 86, 138);
                 font-weight:bold;
-                font-size:15px;">Start your travel adventure today</span>
+                font-size:15px;">Sign in to continue your journey</span>
+
                 <div>
-                    <input type="text" id="name" name="name" placeholder="Enter your full name" required>
-                </div>
-                
-                <div>
-                    <input style="margin-top:20px;" type="email" id="email" name="email" placeholder="Enter your email" required>
+                    <input style="margin-top:40px;" type="email" id="email" name="email" placeholder="Enter your email" required>
                 </div>
 
                 <div>
                     <input type="password" id="password" name="password" placeholder="Enter your password" required>
                 </div>
-
-                <div>
-                    <input type="password" id="confirmPassword" name="password" placeholder="Confirm password" required>
-                </div>
-
-                <button>Create Account</button>
+                
+                <button>Sign In</button>
 
                 <p style="color:rgba(72, 63, 63, 1);
                 font-size:15px;
-                margin-bottom:5px">Already have an account?<a href="signin.html">Sign in</a></p>
+                margin-bottom:5px">Don't have an account?<a href="signup.php">Sign up for free</a></p>
                 
                 <div class="divider">
-                    <span>Or sign up with</span>
+                    <span>Or continue with</span>
                 </div>
 
 
@@ -60,12 +53,12 @@
             </div>
         </div>
 
-    <script src="signup.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
-    <script>
+        <script src="assets/signin.js"></script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+        <script>
         AOS.init();
-    </script>
+        </script>
     </body>
 
     
