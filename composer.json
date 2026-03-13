@@ -1,0 +1,21 @@
+{
+    "name": "tourist-attraction-finder/api",
+    "description": "API for Tourist Attraction Finder in Zamboanga Del Norte",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "TouristAttractionFinder\\Domain\\": "src/Domain/",
+            "TouristAttractionFinder\\Application\\": "src/Application/",
+            "TouristAttractionFinder\\Infrastructure\\": "src/Infrastructure/",
+            "TouristAttractionFinder\\Presentation\\": "src/Presentation/"
+        }
+    },
+    "require": {
+        "vlucas/phpdotenv": "^5.5",
+        "firebase/php-jwt": "^6.8",
+        "respect/validation": "^2.2"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10.0"
+    }
+}
