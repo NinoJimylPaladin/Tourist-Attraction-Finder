@@ -16,7 +16,7 @@ All contributors are expected to follow proper version control practices to main
 
 ## Recommended Workflow
 
-1. Pull the latest updates from the main branch.
+1. Pull the latest updates from the master branch.
 2. Create a new feature or fix branch.
 3. Commit your changes with clear and meaningful messages.
 4. Push the branch to the remote repository.
