@@ -2,7 +2,6 @@
 
 namespace TouristAttractionFinder\Domain;
 
-use Respect\Validation\Validator as v;
 
 class Email
 {
@@ -25,7 +24,7 @@ class Email
     public static function isValid(string $email): bool
     {
         try {
-            return v::email()->validate($email);
+            return \Respect\Validation\Validator::email()->validate($email);
         } catch (\Exception $e) {
             return false;
         }
