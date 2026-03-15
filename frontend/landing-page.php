@@ -43,7 +43,7 @@
                 <p>From local treasures to world wonders, find<br>
                     your path to unforgettable places
                 </p>
-                <div class="explore">
+                <div class="explore-button">
                     <a href="#">Explore Destinations</a>
                 </div>
             </div>
@@ -73,14 +73,40 @@
             <h1>How can i help your journey</h1>
         </div>
     </div>
-       <div class="three-card-container">
-        <img src="../assets/img/curated-itineraries.png">
-        <img src="../assets/img/local-expertise.png">
-        <img src="../assets/img/transport-solution.png">
-    </div>
+
+    <div id="three-cards" class="three-cards-container"></div>
+
     <div class="click-container">
         <div>
             <a class="click">Click to see more</a>
+        </div>
+    </div>
+
+    <h1 class="explorer">Explorer’s Stories & Social Proof</h1>
+
+    <div class="collage-container">
+        <div class="first-row-container">
+            <div class="first-row-div1">
+                <img src="../assets/img/bike.png">
+            </div>
+            <div class="first-row-div2">
+                <img src="../assets/img/cave.png">
+            </div>
+        </div>
+        
+        <div class="second-row-container">
+            <div class="second-row-div1">
+                <img src="../assets/img/diver.png">
+            </div>
+        </div>
+
+        <div class="third-row-container">
+            <div class="third-row-div1">
+                <img src="../assets/img/family.png">
+            </div>
+            <div class="third-row-div2">
+                <img src="../assets/img/selfie.png">
+            </div>
         </div>
     </div>
     

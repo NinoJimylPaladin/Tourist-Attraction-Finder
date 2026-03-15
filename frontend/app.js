@@ -2,13 +2,20 @@
 fetch('../api/TopDestinationAPI.php')
   .then(res => res.json())
   .then(cards => {
-    const container = document.getElementById('top-destinations-cards');
-    container.innerHTML = cards.map(card => `
+    const container1 = document.getElementById('top-destinations-cards');
+    container1.innerHTML = cards.map(card => `
       <div class="six-cards-border">
             <img src="../${card.image_url}">
             <div class="top-destinations-text-overlay">
                 <h3>${card.location}: ${card.name}</h3>
             </div>
+      </div>
+    `).join('');
+
+    const container2 = document.getElementById('three-cards');
+    container2.innerHTML = cards.map(card => `
+      <div class="three-cards-border">
+        <img src="../${card.image_url}">
       </div>
     `).join('');
   })
