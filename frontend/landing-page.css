@@ -127,10 +127,10 @@ ul a{
   margin-top:10px;
 }
 
-.explore{
+.explore-button{
   margin-top:80px;
 }
-.explore a{
+.explore-button a{
   background:#29432A;
   border:#F2994A solid 2px;
   color:#F2C94C;
@@ -267,20 +267,11 @@ ul a{
   padding-top:100px;
 }
 
-.three-card-container{
-  display:flex;
-  justify-content:center;
-  gap:30px;
-}
-.three-card-container img{
-  height:400px;
-  
-}
 
 .click{
   background:#124414;
   border:#F2994A solid 2px;
-  color:#F2C94C;
+  color:#fffffe;
   text-decoration:none;
   padding-left:30px;
   padding-right:30px;
@@ -344,3 +335,124 @@ ul a{
   
 }
 
+.three-cards-container{
+  display:grid;
+  grid-template-columns: repeat(3,1fr);
+  margin: 0 auto;
+  max-width: 1100px;
+  gap:20px;
+}
+
+.three-cards-border{
+  border:#F2994A solid 4px;
+  border-radius:38px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width:350px;
+}
+
+.three-cards-border img{
+  width:100%;
+  height:100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+ 
+}
+
+.three-cards-border img:hover{
+  transform: scale(1.05);
+
+}
+
+.three-cards-border:hover {
+  transform: scale(1.05); 
+  box-shadow: 0 0 15px rgba(242, 153, 74, 0.6);
+}
+
+.explorer{
+  margin-top:200px;
+  text-align:center;
+  color:#F2994A;
+  text-shadow: 0px 2px 2px rgba(0,0,0,0.5);
+  margin-bottom:50px;
+
+}
+
+
+.collage-container{
+  display:grid;
+  grid-template-columns: repeat(3,1fr);
+  margin: 0 auto;
+  max-width: 1100px;
+
+}
+
+
+.first-row-container img{
+  width:100%;
+  height:100%;
+  object-fit: cover;
+}
+.first-row-div1{
+  margin-bottom:20px;
+}
+
+.first-row-div1,
+.first-row-div2{
+  border:#F2994A solid 6px;
+  width:300px;
+
+}
+
+.first-row-div1{
+  border-top-left-radius:100px;
+  overflow: hidden;
+}
+
+.first-row-div2{
+  overflow:hidden;
+  border-bottom-left-radius:100px;
+}
+
+.second-row-div1{
+  border:#F2994A solid 6px;
+  height:100%;
+  width:100%;
+  
+}
+
+.second-row-div1 img{
+  height:100%;
+  width:100%;
+
+}
+
+
+.third-row-container img{
+  width:100%;
+  height:100%;
+  object-fit: cover;
+}
+.third-row-div1{
+  margin-bottom:20px;
+}
+
+.third-row-div1,
+.third-row-div2{
+  border:#F2994A solid 6px;
+  width:300px;
+  height:280px;
+  margin-left:18%;
+  
+}
+
+.third-row-div1{
+  border-top-right-radius:100px;
+  overflow: hidden;
+}
+
+.third-row-div2{
+  overflow:hidden;
+  border-bottom-right-radius:100px;
+}
