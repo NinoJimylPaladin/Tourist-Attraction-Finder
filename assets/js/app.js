@@ -1,5 +1,5 @@
 
-fetch('../api/TopDestinationAPI.php')
+fetch('../api/#')
   .then(res => res.json())
   .then(cards => {
     const container1 = document.getElementById('top-destinations-cards');
