@@ -10,13 +10,13 @@ body {
     font-family: 'Arial', sans-serif;
     height: 100vh;
     overflow: hidden;
-    background: url('background.jpg') no-repeat center center fixed;
+    background: url('../assets/img/background.jpg') no-repeat center center fixed;
     background-size: cover;
 }
 
 .login-container {
     display: flex;
-    height: 100vh; 
+    height: 100vh;
 }
 
 .left-section {

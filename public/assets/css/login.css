@@ -1,0 +1,198 @@
+/* Reset */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Page Background */
+
+body{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+
+background:
+url("User\ sign\ in\ screen\ \(1\).png") no-repeat;
+
+background-size:cover;
+background-position:center;
+}
+
+/* Background container */
+
+.background{
+width:100%;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+/* Login Card */
+
+.login-box{
+width:360px;
+padding:35px;
+
+background:rgba(168, 161, 161, 0.516);
+background: blur(10px);
+
+border-radius:20px;
+border:2px solid #d4a62c;
+
+text-align:center;
+}
+
+/* Logo */
+
+.logo{
+width:150px;
+margin-bottom:20px
+}
+
+/* Title */
+
+.login-box h2{
+font-size:20px;
+margin-bottom:20px;
+color:rgba(252, 252, 252, 0.836)
+}
+
+/* Input Fields */
+
+.input-group{
+display:flex;
+align-items:center;
+
+border:2px solid #0b661d;
+border-radius:10px;
+
+padding:10px;
+margin:12px 0;
+
+background:rgba(255,255,255,0.7);
+}
+
+/* Input Icon */
+
+.input-group i{
+color:#66500B;
+margin-right:10px;
+}
+
+/* Input */
+
+.input-group input{
+border:none;
+outline:none;
+flex:1;
+font-size:14px;
+background:transparent;
+color:#837e7ef9;
+}
+
+/* Options */
+
+.options{
+display:flex;
+justify-content:space-between;
+font-size:13px;
+margin:10px 0;
+
+    
+}
+.options label{
+display:flex;
+align-items:center;
+gap:6px;
+color:#1e4d2b;    /* text color */
+cursor:pointer;
+
+}
+
+/* Checkbox style */
+
+.options input[type="checkbox"]{
+width:15px;
+height:15px;
+accent-color:#1e4d2b;/* gold checkbox */
+cursor:pointer;
+}
+
+.options a{
+text-decoration:none;
+color:#1e4d2b;
+}
+
+/* Login Button */
+
+.login-btn{
+width:100%;
+padding:12px;
+
+border:none;
+border-radius:25px;
+
+background:#1e4d2b;
+color:white;
+
+font-size:16px;
+cursor:pointer;
+
+margin-top:10px;
+border:2px solid #d4a62c;
+transition:0.3s;
+}
+
+.login-btn:hover{
+background:#163b21;
+}
+
+p{
+margin-top:15px;
+color:rgba(252, 252, 252, 0.836);
+}
+
+.continue{
+margin:15px 0 5px;
+font-size:13px;
+color:rgba(252, 252, 252, 0.836);
+}
+
+/* Social icons */
+
+.social i{
+font-size:20px;
+color:#1e4d2b;
+
+width:40px;
+height:40px;
+
+display:inline-flex;
+align-items:center;
+justify-content:center;
+
+background:#1e4d2b;
+color:white;
+
+margin:10px;
+border-radius:10px;
+
+cursor:pointer;
+transition:0.3s;
+}
+
+/* Signup */
+
+.signup{
+font-size:13px;
+margin-top:10px;
+}
+
+.signup a{
+color:#66500B;
+text-decoration:none;
+font-weight:bold;
+}

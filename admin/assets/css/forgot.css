@@ -3,7 +3,7 @@ body {
     font-family: 'Arial', sans-serif;
     height: 100vh;
     overflow: hidden;
-    background: url('background.jpg') no-repeat center center fixed;
+    background: url('../assets/img/background.jpg') no-repeat center center fixed;
     background-size: cover;
 }
 .logo {
@@ -16,7 +16,7 @@ body {
 
 .forgot-container {
     display: flex;
-    height: 100vh; 
+    height: 100vh;
 }
 
 .input-label{
@@ -26,7 +26,7 @@ body {
 .right-section{
     height: 100%;
     background: linear-gradient(135deg, rgba(44, 127, 55, 0.6) 0%, rgba(56, 90, 60, 0.95) 100%);
-    display: flex;  
+    display: flex;
 }
 
 p{
