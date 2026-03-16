@@ -1,0 +1,123 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Page Background */
+
+body{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+
+background:
+url("background.png") no-repeat;
+background-size:cover;
+
+}
+
+.container{
+width:100%;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.card{
+
+width:400px;
+padding:40px;
+
+background:rgba(168, 161, 161, 0.516);
+background:blur(10px);
+
+border-radius:25px;
+border:2px solid #d4a62c;
+
+text-align:center;
+}
+
+.logo{
+width:150px;
+margin-bottom:10px;
+}
+
+h2{
+color:#e6d7a7;
+margin-bottom:10px;
+}
+
+.subtitle{
+color:#1e4d2b;
+font-size:18px;
+margin-bottom:10px;
+}
+
+.desc{
+font-size:14px;
+color:#8a6d2c;
+margin-bottom:20px;
+}
+
+.input-group input{
+
+width:100%;
+padding:12px;
+
+border-radius:25px;
+border:2px solid #1e4d2b;
+
+outline:none;
+font-size:14px;
+}
+
+.reset-btn{
+
+width:100%;
+padding:12px;
+
+margin-top:20px;
+
+border:none;
+border-radius:25px;
+
+background:#1e4d2b;
+color:#e6d7a7;
+
+font-size:16px;
+cursor:pointer;
+
+border:2px solid #d4a62c;
+
+transition:0.3s;
+}
+
+.reset-btn:hover{
+background:#163b21;
+}
+
+/* Links text */
+
+.links{
+margin-top:20px;
+font-size:13px;
+color:hsl(40, 27%, 96%);   /* gold text */
+}
+
+/* Sign In and Sign Up */
+
+.links a{
+color:hsl(40, 20%, 94%);   /* gold color */
+text-decoration:none;
+}
+
+/* Hover effect */
+
+.links a:hover{
+color:#ffd700;
+text-decoration:underline;
+}
+
