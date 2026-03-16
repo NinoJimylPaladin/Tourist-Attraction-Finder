@@ -20,10 +20,6 @@
                 <img src="../assets/img/logo.png">
             </div>
             <div class="search-home-container">
-                <div class="search-box">
-                    <span class="material-icons search-icon">search</span>
-                    <input type="text" placeholder="Search" class="search-input">
-                </div>
                 <ul>
                     <a href="#">Home</a>
                     <a href="#">Packages</a>
@@ -109,7 +105,53 @@
             </div>
         </div>
     </div>
+    <div class="boy">
+        <div>
+            <img src="../assets/img/boy.png">
+            <p>With the help of this website I’m happy<br>
+                as a traveller to travel Zamboanga del<br>
+                Norte</p>
+        </div>
+    </div>
+    <div class="logo-bottom">
+        <div>
+            <img src="../assets/img/logo.png">
+        </div>
+    </div>
+
+    <div class="quick-contacts-container">
+        <div class>
+            <h1 style="color:white">Quick Links</h1>
+            <p>About Us</p>
+            <p>Blog</p>
+            <p>FAQs</p>
+        </div>
+        <div>
+            <h1 style="color:white">Contacts</h1>
+            <p>Email:info@tafgmail.com</p>
+            <p>Phone:+63 12345678910</p>
+            <p>Address:123 TrailBlazor Rd</p>
+        </div>
+    </div>
+
+    <div class="social-icons">
+        <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+    </div>
     
+    <div class="all-rights-reserved">
+        <div>
+            <p style="color:#F2C94C;
+            font-weight:bold;
+            margin-top:20px">@Tourist Attraction Finder</p>
+            <p style="color:white;
+            margin-top:40px">2026 TAF. All rights reserved. l Terms & Conditions I Privacy Policy</p>
+        </div>
+    </div>
+
+
  <script src="../assets/js/app.js"></script>
  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
