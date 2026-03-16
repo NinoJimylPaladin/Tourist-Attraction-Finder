@@ -82,9 +82,9 @@ ul a:hover{
 }
 
 .signin-button a:hover{
-   background: #F2C94C;              /* yellow background on hover */
-  color: #2B662E;                   /* dark green text on hover */
-  border-color: #F2C94C;            /* border matches background */
+   background: #F2C94C;             
+  color: #2B662E;                  
+  border-color: #F2C94C;           
   transform: scale(1.05);  
 }
 .discover-explore{
@@ -126,9 +126,9 @@ ul a:hover{
 }
 
 .explore-button a:hover{
-  background: #F2C94C;              /* yellow background on hover */
-  color: #29432A;                   /* dark green text on hover */
-  border-color: #F2C94C;            /* border matches background */
+  background: #F2C94C;              
+  color: #29432A;                   
+  border-color: #F2C94C;          
   transform: scale(1.05);     
 }
 .container2{
