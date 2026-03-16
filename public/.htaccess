@@ -1,0 +1,18 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # Skip files and directories that exist
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+
+    # Rewrite all other requests to index.php
+    RewriteRule ^.*$ index.php [L]
+</IfModule>
+
+# Enable .htaccess processing
+<IfModule mod_version.c>
+    <IfVersion >= 2.4>
+        Require all granted
+    </IfVersion>
+</IfModule>

@@ -1,5 +1,5 @@
 
-fetch('../api/#')
+fetch('#')
   .then(res => res.json())
   .then(cards => {
     const container1 = document.getElementById('top-destinations-cards');
@@ -19,5 +19,5 @@ fetch('../api/#')
       </div>
     `).join('');
   })
-.catch(err => console.error('Error loading cards:', err));
+  .catch(err => console.error('Error loading cards:', err));
 
