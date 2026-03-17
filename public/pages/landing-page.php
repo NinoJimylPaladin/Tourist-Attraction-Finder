@@ -21,14 +21,14 @@
             </div>
             <div class="search-home-container">
                 <ul>
-                    <a href="#">Home</a>
-                    <a href="#">Packages</a>
-                    <a href="#">Community</a>
-                    <a href="#">About</a>
+                    <a href="index.php">Home</a>
+                    <a href="packages.php">Packages</a>
+                    <a href="community.php">Community</a>
+                    <a href="about.php">About</a>
                 </ul>
             </div>
             <div class="signin-button">
-                <a href="#">Sign In</a>
+                <a href="login.php">Sign In</a>
             </div>
        </div>
        <div class="container2">

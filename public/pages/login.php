@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tourist Attraction Finder</title>
 
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="../assets/css/login.css">
 
 <!-- Font Awesome -->
 <link rel="stylesheet"
@@ -18,7 +18,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
 
 <div class="login-box">
 
-<img src="Logo.png" alt="Tourist Attraction Finder Logo" class="logo">
+<img src="../assets/img/logo.png" alt="Tourist Attraction Finder Logo" class="logo">
 <h2>Sign In To Your Account</h2>
 
 <form>
@@ -35,7 +35,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
 
 <div class="options">   
 <label><input type="checkbox"> Remember Me</label>
-<a href="#">Forgot Password?</a>
+<a href="../pages/forgot-password.php">Forgot Password?</a>
 </div>
 
 <button class="login-btn">Sign in</button>
@@ -49,14 +49,14 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
 
 <p class="signup">
 Don't have an account?
-<a href="../Create Account/C.html">[Sign Up]</a>
+<a href="../pages/register.php">[Sign Up]</a>
 </p>
 
 </form>
 
 </div>
 </div>
- <script src="script.js"></script>
+ <script src="../assets/js/login.js"></script>
  <script>
     AOS.init();
     document.querySelectorAll('.smooth-link').forEach(link => {

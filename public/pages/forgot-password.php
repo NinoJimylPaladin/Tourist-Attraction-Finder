@@ -6,7 +6,7 @@
 
 <title>Forgot Password</title>
 
-<link rel="stylesheet" href="f.css">
+<link rel="stylesheet" href="../assets/css/forgot-password.css">
 
 </head>
 
@@ -16,7 +16,7 @@
 
 <div class="card">
 
-<img src="logo.png" class="logo">
+<img src="../assets/img/logo.png" class="logo">
 
 <h2>Forgot Password</h2>
 
@@ -38,7 +38,11 @@ and we'll send you a password reset link.
 </form>
 
 <p class="links">
-<a href="#">Back to</a><a href="#">[Sign In]</a> <a href="#">Don't have an account?</a><a href="#">[Sign Up]</a>
+    
+<p="Back to">Back to</p>
+<a href="../pages/login.php">[Sign In]</a>
+ Don't have an account?
+<a href="../pages/register.php ">[Sign Up]</a>
 </p>
 
 </div>

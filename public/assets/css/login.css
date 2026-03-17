@@ -15,7 +15,7 @@ justify-content:center;
 align-items:center;
 
 background:
-url("User\ sign\ in\ screen\ \(1\).png") no-repeat;
+url("../img/User sign in screen (1).png") no-repeat;
 
 background-size:cover;
 background-position:center;
@@ -49,7 +49,7 @@ text-align:center;
 
 .logo{
 width:150px;
-margin-bottom:20px
+margin-bottom:20px;
 }
 
 /* Title */
@@ -57,7 +57,7 @@ margin-bottom:20px
 .login-box h2{
 font-size:20px;
 margin-bottom:20px;
-color:rgba(252, 252, 252, 0.836)
+color:rgba(252, 252, 252, 0.836);
 }
 
 /* Input Fields */

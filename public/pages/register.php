@@ -6,7 +6,7 @@
 
 <title>Create Account</title>
 
-<link rel="stylesheet" href="C.css">
+<link rel="stylesheet" href="../assets/css/register.css">
 
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -18,7 +18,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
 <div class="container">
 <div class="signup-box">
 
-<img src="Picture.png" alt="Tourist Attraction Finder Logo" class="logo">
+<img src="../assets/img/Picture.png" alt="Tourist Attraction Finder Logo" class="logo">
 <h2>Create Your Account</h2>
 
 <form id="signupForm">
@@ -61,7 +61,7 @@ I agree to the <span>Terms of Service</span> and <span>Privacy Policy</span>
 
 <p class="signin">
 Already have an account?
-<a href="../sign in to your acc/index.html">[Sign In]</a>
+<a href="../pages/login.php">[Sign In]</a>
 </p>
 
 </form>
@@ -70,7 +70,7 @@ Already have an account?
 
 </div>
 
-<script src="signup.js"></script>
+<script src="../assets/js/register.js"></script>
 
 </body>
 </html>
