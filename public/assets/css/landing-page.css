@@ -37,6 +37,7 @@ body {
 .search-home-container{
   width:800px;
 }
+
 ul{
   display:flex;
   justify-content:center;
@@ -54,7 +55,9 @@ ul a{
 }
 
 ul a:hover{
- color: white
+ color: white;
+ transform:scale(1.05);
+
 }
 .signin-button{
   height:100px;
@@ -82,9 +85,9 @@ ul a:hover{
 }
 
 .signin-button a:hover{
-   background: #F2C94C;             
-  color: #2B662E;                  
-  border-color: #F2C94C;           
+   background: #F2C94C;              /* yellow background on hover */
+  color: #2B662E;                   /* dark green text on hover */
+  border-color: #F2C94C;            /* border matches background */
   transform: scale(1.05);  
 }
 .discover-explore{
@@ -126,9 +129,9 @@ ul a:hover{
 }
 
 .explore-button a:hover{
-  background: #F2C94C;              
-  color: #29432A;                   
-  border-color: #F2C94C;          
+  background: #F2C94C;              /* yellow background on hover */
+  color: #29432A;                   /* dark green text on hover */
+  border-color: #F2C94C;            /* border matches background */
   transform: scale(1.05);     
 }
 .container2{
@@ -149,6 +152,12 @@ ul a:hover{
   margin-top:120px;
   z-index:2;
   position: relative;
+  transition:all 0.3s ease;
+}
+
+.yellow-car:hover{
+transform:scale(1.05);
+
 }
 
 .falls{
@@ -157,7 +166,12 @@ ul a:hover{
   z-index:1;
   top:0px;                 
   left:100px; 
+  transition:all 0.3s ease;
  
+}
+
+.falls:hover{
+  transform:scale(1.05);
 }
 
 .top-destinations-container{
@@ -397,9 +411,15 @@ ul a:hover{
 .first-row-div2{
   border:#F2994A solid 6px;
   width:300px;
+  transition:all 0.3s ease;
 
 }
 
+.first-row-div1:hover,
+.first-row-div2:hover{
+  transform:scale(1.05);
+
+}
 .first-row-div1{
   border-top-left-radius:100px;
   overflow: hidden;
@@ -414,9 +434,14 @@ ul a:hover{
   border:#F2994A solid 6px;
   height:100%;
   width:100%;
+  transition:all 0.3s ease;
   
 }
 
+.second-row-div1:hover{
+  transform:scale(1.05);
+
+}
 .second-row-div1 img{
   height:100%;
   width:100%;
@@ -439,9 +464,15 @@ ul a:hover{
   width:300px;
   height:280px;
   margin-left:18%;
+  transition:all 0.3s ease;
   
 }
 
+.third-row-div1:hover,
+.third-row-div2:hover{
+  transform:scale(1.05);
+
+}
 .third-row-div1{
   border-top-right-radius:100px;
   overflow: hidden;
@@ -534,5 +565,30 @@ ul a:hover{
   display:flex;
   justify-content:center;
   text-align:center;
+
+}
+
+@media (max-width: 1024px){
+  .search-home-container{
+    width:300px;
+  }
+
+}
+
+@media (max-width: 768px){
+  .logo img{
+    width:250px;
+  }
+  .search-home-container{
+    width:300px;
+  }
+  
+  .ul{
+    gap:1px;
+  }
+  .signin-button{
+    margin-right:0px;
+  }
+
 
 }
