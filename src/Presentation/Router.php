@@ -16,6 +16,16 @@ class Router
         $this->addRoute('POST', $path, $callback);
     }
 
+    public function put(string $path, callable $callback): void
+    {
+        $this->addRoute('PUT', $path, $callback);
+    }
+
+    public function delete(string $path, callable $callback): void
+    {
+        $this->addRoute('DELETE', $path, $callback);
+    }
+
     private function addRoute(string $method, string $path, callable $callback): void
     {
         $this->routes[] = [
@@ -64,7 +74,7 @@ class Router
             'message' => 'Route not found',
             'requested_path' => $path,
             'requested_method' => $method,
-            'available_routes' => array_map(function($route) {
+            'available_routes' => array_map(function ($route) {
                 return $route['method'] . ' ' . $route['path'];
             }, $this->routes),
             'data' => null
@@ -106,3 +116,39 @@ class Router
         }
     }
 }
+
+// Initialize controllers
+$attractionController = new \TouristAttractionFinder\Presentation\Controllers\AttractionController();
+
+// Attraction Endpoints
+$router->get('/api/attractions', function ($data) use ($attractionController) {
+    return $attractionController->getAll($data);
+});
+
+$router->get('/api/attractions/top-rated', function ($data) use ($attractionController) {
+    return $attractionController->getTopRated($data);
+});
+
+$router->get('/api/attractions/category', function ($data) use ($attractionController) {
+    return $attractionController->getByCategory($data);
+});
+
+$router->get('/api/attractions/location', function ($data) use ($attractionController) {
+    return $attractionController->getByLocation($data);
+});
+
+$router->get('/api/attractions/{id}', function ($data) use ($attractionController) {
+    return $attractionController->getById($data);
+});
+
+$router->post('/api/attractions', function ($data) use ($attractionController) {
+    return $attractionController->create($data);
+});
+
+$router->put('/api/attractions/{id}', function ($data) use ($attractionController) {
+    return $attractionController->update($data);
+});
+
+$router->delete('/api/attractions/{id}', function ($data) use ($attractionController) {
+    return $attractionController->delete($data);
+});

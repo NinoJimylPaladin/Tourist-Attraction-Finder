@@ -1,23 +1,78 @@
+// Fetch top-rated attractions for the landing page
+async function loadTopAttractions() {
+  try {
+    const response = await fetch("/api/attractions/top-rated?limit=6");
+    const result = await response.json();
 
-fetch('#')
-  .then(res => res.json())
-  .then(cards => {
-    const container1 = document.getElementById('top-destinations-cards');
-    container1.innerHTML = cards.map(card => `
-      <div class="six-cards-border">
-            <img src="../${card.image_url}">
+    if (result.success && result.data) {
+      const attractions = result.data;
+      renderTopDestinations(attractions);
+      renderThreeCards(attractions.slice(0, 3));
+    } else {
+      console.error("Failed to load attractions:", result.message);
+      showErrorMessage("Failed to load attractions. Please try again later.");
+    }
+  } catch (error) {
+    console.error("Error loading attractions:", error);
+    showErrorMessage("Network error. Please check your connection.");
+  }
+}
+
+function renderTopDestinations(attractions) {
+  const container = document.getElementById("top-destinations-cards");
+  if (!container) return;
+
+  container.innerHTML = attractions
+    .map(
+      (attraction) => `
+        <div class="six-cards-border">
+            <img src="../${attraction.image_url}" alt="${attraction.name}">
             <div class="top-destinations-text-overlay">
-                <h3>${card.location}: ${card.name}</h3>
+                <h3>${attraction.location}: ${attraction.name}</h3>
             </div>
-      </div>
-    `).join('');
+        </div>
+    `,
+    )
+    .join("");
+}
 
-    const container2 = document.getElementById('three-cards');
-    container2.innerHTML = cards.map(card => `
-      <div class="three-cards-border">
-        <img src="../${card.image_url}">
-      </div>
-    `).join('');
-  })
-  .catch(err => console.error('Error loading cards:', err));
+function renderThreeCards(attractions) {
+  const container = document.getElementById("three-cards");
+  if (!container) return;
 
+  container.innerHTML = attractions
+    .map(
+      (attraction) => `
+        <div class="three-cards-border">
+            <img src="../${attraction.image_url}" alt="${attraction.name}">
+        </div>
+    `,
+    )
+    .join("");
+}
+
+function showErrorMessage(message) {
+  // Create error message element
+  const errorDiv = document.createElement("div");
+  errorDiv.className = "error-message";
+  errorDiv.innerHTML = `
+        <div style="text-align: center; padding: 20px; color: #F2C94C; background: rgba(0,0,0,0.8); border: 2px solid #F2C94C; border-radius: 10px; margin: 20px;">
+            <h3>⚠️ ${message}</h3>
+            <p style="margin-top: 10px; opacity: 0.8;">The page will continue to work with placeholder content.</p>
+        </div>
+    `;
+
+  // Insert after the top destinations section
+  const topDestinationsSection = document.querySelector(
+    ".top-destinations-container",
+  );
+  if (topDestinationsSection) {
+    topDestinationsSection.parentNode.insertBefore(
+      errorDiv,
+      topDestinationsSection.nextSibling,
+    );
+  }
+}
+
+// Load attractions when the page loads
+document.addEventListener("DOMContentLoaded", loadTopAttractions);

@@ -1,57 +1,170 @@
-// Get form
+// Get form and inputs
 const form = document.getElementById("signupForm");
+const fullnameInput = document.getElementById("fullname");
+const emailInput = document.getElementById("email");
+const passwordInput = document.getElementById("password");
+const confirmPasswordInput = document.getElementById("confirm");
+const agreeCheckbox = document.getElementById("agree");
+const submitBtn = document.querySelector(".signup-btn");
+const errorMessage = document.querySelector(".error-message");
 
-// Get inputs
-const fullname = document.getElementById("fullname");
-const email = document.getElementById("email");
-const password = document.getElementById("password");
-const confirm = document.getElementById("confirm");
-const agree = document.getElementById("agree");
-
-form.addEventListener("submit", function(e){
-
-e.preventDefault(); // stop page refresh
-
-let name = fullname.value.trim();
-let mail = email.value.trim();
-let pass = password.value.trim();
-let confirmPass = confirm.value.trim();
-
-// Check empty fields
-if(name === "" || mail === "" || pass === "" || confirmPass === ""){
-alert("Please fill in all fields.");
-return;
+// Show error message
+function showError(message) {
+  if (errorMessage) {
+    errorMessage.textContent = message;
+    errorMessage.style.display = "block";
+  } else {
+    alert(message);
+  }
 }
 
-// Email validation
-let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
-if(!mail.match(emailPattern)){
-alert("Please enter a valid email address.");
-return;
+// Hide error message
+function hideError() {
+  if (errorMessage) {
+    errorMessage.style.display = "none";
+  }
 }
 
-// Password length
-if(pass.length < 6){
-alert("Password must be at least 6 characters.");
-return;
+// Validate email format
+function isValidEmail(email) {
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailPattern.test(email);
 }
 
-// Password match
-if(pass !== confirmPass){
-alert("Passwords do not match.");
-return;
+// Validate password strength
+function isStrongPassword(password) {
+  // At least 8 characters, one uppercase, one lowercase, one number
+  const passwordPattern =
+    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d@$!%*?&]{8,}$/;
+  return passwordPattern.test(password);
 }
 
-// Check terms agreement
-if(!agree.checked){
-alert("You must agree to the Terms and Privacy Policy.");
-return;
-}
+form.addEventListener("submit", async function (e) {
+  e.preventDefault();
+  hideError();
 
-// Success
-alert("Account created successfully!");
+  const name = fullnameInput.value.trim();
+  const email = emailInput.value.trim();
+  const password = passwordInput.value.trim();
+  const confirmPassword = confirmPasswordInput.value.trim();
+  const agree = agreeCheckbox.checked;
 
-// Reset form
-form.reset();
+  // Client-side validation
+  if (!name || !email || !password || !confirmPassword) {
+    showError("Please fill in all fields.");
+    return;
+  }
 
+  if (!isValidEmail(email)) {
+    showError("Please enter a valid email address.");
+    return;
+  }
+
+  if (!isStrongPassword(password)) {
+    showError(
+      "Password must be at least 8 characters with uppercase, lowercase, and number.",
+    );
+    return;
+  }
+
+  if (password !== confirmPassword) {
+    showError("Passwords do not match.");
+    return;
+  }
+
+  if (!agree) {
+    showError("You must agree to the Terms and Privacy Policy.");
+    return;
+  }
+
+  // Disable button and show loading state
+  submitBtn.disabled = true;
+  submitBtn.textContent = "Creating Account...";
+  submitBtn.style.backgroundColor = "#ccc";
+
+  try {
+    const response = await fetch("/api/auth/register", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name: name,
+        email: email,
+        password: password,
+      }),
+    });
+
+    const result = await response.json();
+
+    if (result.success) {
+      // Show success message
+      showError("Account created successfully! Redirecting to login...");
+      showError.style.color = "#4CAF50";
+
+      // Redirect to login after short delay
+      setTimeout(() => {
+        window.location.href = "login.php";
+      }, 2000);
+    } else {
+      showError(result.message || "Registration failed. Please try again.");
+    }
+  } catch (error) {
+    console.error("Registration error:", error);
+    showError("Network error. Please check your connection and try again.");
+  } finally {
+    // Re-enable button
+    submitBtn.disabled = false;
+    submitBtn.textContent = "Sign Up";
+    submitBtn.style.backgroundColor = "";
+  }
+});
+
+// Real-time validation feedback
+emailInput.addEventListener("blur", function () {
+  if (this.value && !isValidEmail(this.value)) {
+    this.style.borderColor = "#F2C94C";
+    showError("Please enter a valid email address.");
+  } else {
+    this.style.borderColor = "";
+    hideError();
+  }
+});
+
+passwordInput.addEventListener("input", function () {
+  const password = this.value;
+  const confirmPassword = confirmPasswordInput.value;
+
+  if (password && !isStrongPassword(password)) {
+    this.style.borderColor = "#F2C94C";
+  } else {
+    this.style.borderColor = "";
+  }
+
+  if (confirmPassword && password !== confirmPassword) {
+    confirmPasswordInput.style.borderColor = "#F2C94C";
+  } else {
+    confirmPasswordInput.style.borderColor = "";
+  }
+});
+
+confirmPasswordInput.addEventListener("input", function () {
+  const password = passwordInput.value;
+  const confirmPassword = this.value;
+
+  if (confirmPassword && password !== confirmPassword) {
+    this.style.borderColor = "#F2C94C";
+    showError("Passwords do not match.");
+  } else {
+    this.style.borderColor = "";
+    hideError();
+  }
+});
+
+agreeCheckbox.addEventListener("change", function () {
+  if (!this.checked) {
+    showError("You must agree to the Terms and Privacy Policy.");
+  } else {
+    hideError();
+  }
 });
