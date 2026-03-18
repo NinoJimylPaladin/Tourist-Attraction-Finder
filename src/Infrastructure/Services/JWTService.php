@@ -12,8 +12,24 @@ class JWTService
 
     public function __construct()
     {
-        $this->secretKey = $_ENV['JWT_SECRET'] ?? bin2hex(random_bytes(32));
-        $this->expirationTime = (int)($_ENV['JWT_EXPIRATION'] ?? 3600); // 1 hour default
+        // Use environment variable or generate a secure key
+        $secret = $_ENV['JWT_SECRET'] ?? null;
+        if (!$secret) {
+            // Generate a secure random key if not provided
+            $secret = bin2hex(random_bytes(64));
+            error_log("Warning: JWT_SECRET not set in environment. Using generated key.");
+        }
+        $this->secretKey = $secret;
+
+        // Set expiration time (default 1 hour)
+        $this->expirationTime = (int)($_ENV['JWT_EXPIRATION'] ?? 3600);
+
+        // Validate expiration time
+        if ($this->expirationTime < 300) { // Minimum 5 minutes
+            $this->expirationTime = 300;
+        } elseif ($this->expirationTime > 86400) { // Maximum 24 hours
+            $this->expirationTime = 86400;
+        }
     }
 
     public function generateToken(int $userId, string $email): string

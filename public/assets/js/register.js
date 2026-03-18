@@ -117,11 +117,11 @@ form.addEventListener("submit", async function (e) {
     if (result.success) {
       // Show success message
       showError("Account created successfully! Redirecting to login...");
-      showError.style.color = "#4CAF50";
+      errorMessage.style.color = "#4CAF50";
 
       // Redirect to login after short delay
       setTimeout(() => {
-        window.location.href = "login.php";
+        window.location.href = "../pages/login.php";
       }, 2000);
     } else {
       showError(result.message || "Registration failed. Please try again.");

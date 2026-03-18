@@ -28,7 +28,7 @@ class Password
 
     public static function fromHashed(string $hash): self
     {
-        if (!preg_match('/^\$2[ayb]\$[0-9]{2}\$[./0-9A-Za-z]{53}$/', $hash)) {
+        if (!preg_match('/^\$2[ayb]\$[0-9]{2}\$[A-Za-z0-9\.\/]{53}$/', $hash)) {
             throw new \InvalidArgumentException('Invalid password hash format');
         }
 

@@ -77,7 +77,7 @@ form.addEventListener("submit", async function (event) {
 
       // Redirect after short delay
       setTimeout(() => {
-        window.location.href = "index.php";
+        window.location.href = "../pages/index.php";
       }, 1000);
     } else {
       showError(
@@ -101,7 +101,7 @@ function checkAuthStatus() {
     localStorage.getItem("auth_token") || sessionStorage.getItem("auth_token");
   if (token) {
     // Token exists, redirect to dashboard
-    window.location.href = "index.php";
+    window.location.href = "../pages/index.php";
   }
 }
 

@@ -90,9 +90,25 @@ class Router
     private function callCallback(callable $callback): void
     {
         try {
-            // Get request body for POST requests
+            // Get request body for POST/PUT requests
             $input = file_get_contents('php://input');
-            $data = $input ? json_decode($input, true) : [];
+            $data = [];
+
+            if ($input) {
+                $contentType = $_SERVER['CONTENT_TYPE'] ?? '';
+                // Check if content type contains application/json (handle variations)
+                if (stripos($contentType, 'application/json') !== false) {
+                    $decoded = json_decode($input, true);
+                    if (json_last_error() === JSON_ERROR_NONE && is_array($decoded)) {
+                        $data = $decoded;
+                    } else {
+                        throw new \InvalidArgumentException('Invalid JSON data: ' . json_last_error_msg());
+                    }
+                } else {
+                    // Handle form data
+                    parse_str($input, $data);
+                }
+            }
 
             // Set global request data
             $_REQUEST_DATA = $data;
@@ -116,49 +132,3 @@ class Router
         }
     }
 }
-
-// Initialize controllers
-$authController = new \TouristAttractionFinder\Presentation\Controllers\AuthController();
-$attractionController = new \TouristAttractionFinder\Presentation\Controllers\AttractionController();
-
-// Authentication Endpoints
-$router->post('/api/auth/register', function ($data) use ($authController) {
-    return $authController->register($data);
-});
-
-$router->post('/api/auth/login', function ($data) use ($authController) {
-    return $authController->login($data);
-});
-
-// Attraction Endpoints
-$router->get('/api/attractions', function ($data) use ($attractionController) {
-    return $attractionController->getAll($data);
-});
-
-$router->get('/api/attractions/top-rated', function ($data) use ($attractionController) {
-    return $attractionController->getTopRated($data);
-});
-
-$router->get('/api/attractions/category', function ($data) use ($attractionController) {
-    return $attractionController->getByCategory($data);
-});
-
-$router->get('/api/attractions/location', function ($data) use ($attractionController) {
-    return $attractionController->getByLocation($data);
-});
-
-$router->get('/api/attractions/{id}', function ($data) use ($attractionController) {
-    return $attractionController->getById($data);
-});
-
-$router->post('/api/attractions', function ($data) use ($attractionController) {
-    return $attractionController->create($data);
-});
-
-$router->put('/api/attractions/{id}', function ($data) use ($attractionController) {
-    return $attractionController->update($data);
-});
-
-$router->delete('/api/attractions/{id}', function ($data) use ($attractionController) {
-    return $attractionController->delete($data);
-});
