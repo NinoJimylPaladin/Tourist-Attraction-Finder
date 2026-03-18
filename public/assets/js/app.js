@@ -26,7 +26,7 @@ function renderTopDestinations(attractions) {
     .map(
       (attraction) => `
         <div class="six-cards-border">
-            <img src="../${attraction.image_url}" alt="${attraction.name}">
+            <img src="/${attraction.image_url}" alt="${attraction.name}" onerror="this.onerror=null; this.src='/assets/img/falls.png'; this.style.opacity='0.5';">
             <div class="top-destinations-text-overlay">
                 <h3>${attraction.location}: ${attraction.name}</h3>
             </div>
@@ -44,7 +44,7 @@ function renderThreeCards(attractions) {
     .map(
       (attraction) => `
         <div class="three-cards-border">
-            <img src="../${attraction.image_url}" alt="${attraction.name}">
+            <img src="/${attraction.image_url}" alt="${attraction.name}" onerror="this.onerror=null; this.src='/assets/img/falls.png'; this.style.opacity='0.5';">
         </div>
     `,
     )
