@@ -71,7 +71,9 @@ form.addEventListener("submit", async function (event) {
 
       // Show success message
       showError("Login successful! Redirecting...");
-      showError.style.color = "#4CAF50";
+      if (errorMessage) {
+        errorMessage.style.color = "#4CAF50";
+      }
 
       // Redirect after short delay
       setTimeout(() => {

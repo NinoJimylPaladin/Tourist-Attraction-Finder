@@ -118,7 +118,17 @@ class Router
 }
 
 // Initialize controllers
+$authController = new \TouristAttractionFinder\Presentation\Controllers\AuthController();
 $attractionController = new \TouristAttractionFinder\Presentation\Controllers\AttractionController();
+
+// Authentication Endpoints
+$router->post('/api/auth/register', function ($data) use ($authController) {
+    return $authController->register($data);
+});
+
+$router->post('/api/auth/login', function ($data) use ($authController) {
+    return $authController->login($data);
+});
 
 // Attraction Endpoints
 $router->get('/api/attractions', function ($data) use ($attractionController) {

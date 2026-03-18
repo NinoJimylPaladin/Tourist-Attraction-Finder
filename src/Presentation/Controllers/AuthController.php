@@ -10,6 +10,7 @@ use TouristAttractionFinder\Domain\Exceptions\UserAlreadyExistsException;
 use TouristAttractionFinder\Domain\Exceptions\InvalidCredentialsException;
 use TouristAttractionFinder\Infrastructure\Repositories\MySQLUserRepository;
 use TouristAttractionFinder\Infrastructure\Services\JWTService;
+use TouristAttractionFinder\Infrastructure\Services\Logger;
 
 class AuthController
 {
