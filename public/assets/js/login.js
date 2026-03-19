@@ -71,13 +71,11 @@ form.addEventListener("submit", async function (event) {
 
       // Show success message
       showError("Login successful! Redirecting...");
-      if (errorMessage) {
-        errorMessage.style.color = "#4CAF50";
-      }
+      showError.style.color = "#4CAF50";
 
       // Redirect after short delay
       setTimeout(() => {
-        window.location.href = "../pages/index.php";
+        window.location.href = "index.php";
       }, 1000);
     } else {
       showError(
@@ -101,7 +99,7 @@ function checkAuthStatus() {
     localStorage.getItem("auth_token") || sessionStorage.getItem("auth_token");
   if (token) {
     // Token exists, redirect to dashboard
-    window.location.href = "../pages/index.php";
+    window.location.href = "index.php";
   }
 }
 

@@ -1,21 +1,40 @@
 {
-    "name": "tourist-attraction-finder/api",
-    "description": "API for Tourist Attraction Finder in Zamboanga Del Norte",
-    "type": "project",
-    "autoload": {
-        "psr-4": {
-            "TouristAttractionFinder\\Domain\\": "src/Domain/",
-            "TouristAttractionFinder\\Application\\": "src/Application/",
-            "TouristAttractionFinder\\Infrastructure\\": "src/Infrastructure/",
-            "TouristAttractionFinder\\Presentation\\": "src/Presentation/"
-        }
+  "name": "tourist/attraction-finder",
+  "description": "A PHP-based tourist attraction finder web application",
+  "type": "project",
+  "require": {
+    "php": "^8.0",
+    "ext-pdo": "*",
+    "ext-json": "*",
+    "ext-mbstring": "*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^9.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\": "src/"
     },
-    "require": {
-        "vlucas/phpdotenv": "^5.5",
-        "firebase/php-jwt": "^6.8",
-        "respect/validation": "^2.2"
-    },
-    "require-dev": {
-        "phpunit/phpunit": "^10.0"
+    "files": [
+      "config/database.php"
+    ]
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "App\\Tests\\": "tests/"
     }
+  },
+  "scripts": {
+    "test": "phpunit",
+    "setup": [
+      "echo 'Setting up the application...'",
+      "echo 'Please run: mysql -u root -p < database/schema.sql'"
+    ]
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "sort-packages": true
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true
 }

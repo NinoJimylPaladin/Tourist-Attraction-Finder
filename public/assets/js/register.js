@@ -39,23 +39,6 @@ function isStrongPassword(password) {
   return passwordPattern.test(password);
 }
 
-// Get password strength message
-function getPasswordStrengthMessage(password) {
-  if (password.length < 8) {
-    return "Password must be at least 8 characters long";
-  }
-  if (!/(?=.*[a-z])/.test(password)) {
-    return "Password must contain at least one lowercase letter";
-  }
-  if (!/(?=.*[A-Z])/.test(password)) {
-    return "Password must contain at least one uppercase letter";
-  }
-  if (!/(?=.*\d)/.test(password)) {
-    return "Password must contain at least one number";
-  }
-  return "Password is strong";
-}
-
 form.addEventListener("submit", async function (e) {
   e.preventDefault();
   hideError();
@@ -117,11 +100,11 @@ form.addEventListener("submit", async function (e) {
     if (result.success) {
       // Show success message
       showError("Account created successfully! Redirecting to login...");
-      errorMessage.style.color = "#4CAF50";
+      showError.style.color = "#4CAF50";
 
       // Redirect to login after short delay
       setTimeout(() => {
-        window.location.href = "../pages/login.php";
+        window.location.href = "login.php";
       }, 2000);
     } else {
       showError(result.message || "Registration failed. Please try again.");
