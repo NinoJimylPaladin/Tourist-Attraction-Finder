@@ -116,4 +116,4 @@ VALUES (
         'admin@example.com',
         '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi'
     );
--- password: admin123
+-- password: admin123 (properly hashed with password_hash())

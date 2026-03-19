@@ -33,7 +33,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
 <input type="password" placeholder="Password">
 </div>
 
-<div class="options">   
+<div class="options">
 <label><input type="checkbox"> Remember Me</label>
 <a href="../pages/forgot-password.php">Forgot Password?</a>
 </div>
@@ -59,15 +59,16 @@ Don't have an account?
  <script src="../assets/js/login.js"></script>
  <script>
     AOS.init();
-    document.querySelectorAll('.smooth-link').forEach(link => {
-    link.addEventListener('click', function(e) {
-    e.preventDefault(); 
-    document.body.classList.add('fade-out');
-    setTimeout(() => {
-    window.location.href = this.href; 
-    }, 500); 
-  });
-});
+    // Removed smooth-link functionality as CSS classes don't exist
+    // document.querySelectorAll('.smooth-link').forEach(link => {
+    //     link.addEventListener('click', function(e) {
+    //         e.preventDefault();
+    //         document.body.classList.add('fade-out');
+    //         setTimeout(() => {
+    //             window.location.href = this.href;
+    //         }, 500);
+    //     });
+    // });
 
     </script>
 

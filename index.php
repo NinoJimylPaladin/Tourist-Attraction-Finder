@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="icon" type="image/x-icon" href="public/assets/img/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="public/assets/img/logo.png">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -19,7 +19,7 @@
     <div class="background">
         <div data-aos="fade-down" data-aos-duration="1500" data-aos-delay="300" class="container">
             <div class="logo">
-                <img src="public/assets/img/logo.png">
+                <img src="public/assets/img/logo.png" alt="Tourist Attraction Finder Logo">
             </div>
             <div class="search-home-container">
                 <ul>
@@ -46,15 +46,15 @@
                 </div>
             </div>
             <div data-aos="fade-left" data-aos-duration="1500" data-aos-delay="300" class="two-cards">
-                <img class="yellow-car" src="public/assets/img/yellow-car.png">
-                <img class="falls" src="public/assets/img/falls.png">
+                <img class="yellow-car" src="public/assets/img/yellow-car.png" alt="Yellow car on scenic road">
+                <img class="falls" src="public/assets/img/falls.png" alt="Waterfall in natural setting">
             </div>
         </div>
     </div>
     <div class="top-destinations-container">
         <div class="background-top-destinations">
             <h1>Top Destinations</h1>
-            <p>specific reasons why this should be your main goal.</p>
+            <p>Explore the most popular destinations loved by travelers from around the world. Find your next adventure today.</p>
         </div>
         <div class="button-cities-municipalities">
             <div>
@@ -68,7 +68,7 @@
 
     <div class="click-to-see-more-container">
         <div>
-            <h1>How can i help your journey</h1>
+            <h1>How Can I Help Your Journey</h1>
         </div>
     </div>
 
@@ -85,31 +85,31 @@
     <div class="collage-container">
         <div class="first-row-container">
             <div class="first-row-div1">
-                <img src="public/assets/img/bike.png">
+                <img src="public/assets/img/bike.png" alt="Bicycle on scenic trail">
             </div>
             <div class="first-row-div2">
-                <img src="public/assets/img/cave.png">
+                <img src="public/assets/img/cave.png" alt="Cave entrance with natural lighting">
             </div>
         </div>
 
         <div class="second-row-container">
             <div class="second-row-div1">
-                <img src="public/assets/img/diver.png">
+                <img src="public/assets/img/diver.png" alt="Scuba diver exploring underwater">
             </div>
         </div>
 
         <div class="third-row-container">
             <div class="third-row-div1">
-                <img src="public/assets/img/family.png">
+                <img src="public/assets/img/family.png" alt="Family enjoying outdoor activity">
             </div>
             <div class="third-row-div2">
-                <img src="public/assets/img/selfie.png">
+                <img src="public/assets/img/selfie.png" alt="Tourist taking selfie at landmark">
             </div>
         </div>
     </div>
     <div class="boy">
         <div>
-            <img src="public/assets/img/boy.png">
+            <img src="public/assets/img/boy.png" alt="Happy boy traveler">
             <p>With the help of this website I’m happy<br>
                 as a traveller to travel Zamboanga del<br>
                 Norte</p>
@@ -117,12 +117,12 @@
     </div>
     <div class="logo-bottom">
         <div>
-            <img src="public/assets/img/logo.png">
+            <img src="public/assets/img/logo.png" alt="Tourist Attraction Finder Logo">
         </div>
     </div>
 
     <div class="quick-contacts-container">
-        <div class>
+        <div class="quick-links">
             <h1 style="color:white">Quick Links</h1>
             <p>About Us</p>
             <p>Blog</p>
@@ -130,7 +130,7 @@
         </div>
         <div>
             <h1 style="color:white">Contacts</h1>
-            <p>Email:info@tafgmail.com</p>
+            <p>Email:info@taf@gmail.com</p>
             <p>Phone:+63 12345678910</p>
             <p>Address:123 TrailBlazor Rd</p>
         </div>
@@ -159,15 +159,16 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init();
-        document.querySelectorAll('.smooth-link').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                document.body.classList.add('fade-out');
-                setTimeout(() => {
-                    window.location.href = this.href;
-                }, 500);
-            });
-        });
+        // Removed smooth-link functionality as CSS classes don't exist
+        // document.querySelectorAll('.smooth-link').forEach(link => {
+        //     link.addEventListener('click', function(e) {
+        //         e.preventDefault();
+        //         document.body.classList.add('fade-out');
+        //         setTimeout(() => {
+        //             window.location.href = this.href;
+        //         }, 500);
+        //     });
+        // });
     </script>
 
 

@@ -6,12 +6,14 @@ body {
     background: url('../assets/img/background.jpg') no-repeat center center fixed;
     background-size: cover;
 }
+
 .logo {
     max-width: 650px;
     height: auto;
     z-index: 10;
-    left: 0;
-    display:absolute;
+    position: absolute;
+    top: 20px;
+    left: 20px;
 }
 
 .forgot-container {
@@ -19,18 +21,111 @@ body {
     height: 100vh;
 }
 
-.input-label{
-    margin-top: 1000px;
+.left-section {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
 }
 
-.right-section{
-    height: 100%;
+.right-section {
+    flex: 1;
     background: linear-gradient(135deg, rgba(44, 127, 55, 0.6) 0%, rgba(56, 90, 60, 0.95) 100%);
     display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
 }
 
-p{
-    margin-bottom:20px;
-    display: inline-block;
-    font-size:16px;
+.forgot-box {
+    width: 100%;
+    max-width: 400px;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.forgot-box h2 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-label {
+    display: block;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.input-group input:focus {
+    border-color: #fff;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.submit-btn:hover {
+    background: linear-gradient(135deg, #45a049 0%, #3d8b40 100%);
+    transform: translateY(-2px);
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+}
+
+.back-link {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.back-link:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+p {
+    margin-bottom: 20px;
+    display: block;
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
 }
