@@ -7,11 +7,11 @@
  * using PDO for secure database operations.
  */
 
-// Database configuration from environment variables
-$host = getenv('DB_HOST') ?: 'localhost';
-$dbname = getenv('DB_NAME') ?: 'tourist_attraction_finder';
-$username = getenv('DB_USERNAME') ?: 'root';
-$password = getenv('DB_PASSWORD') ?: '';
+// Database configuration (using hardcoded values for now)
+$host = 'localhost';
+$dbname = 'tourist_attraction_finder';
+$username = 'root';
+$password = '';
 
 // Create PDO connection
 try {

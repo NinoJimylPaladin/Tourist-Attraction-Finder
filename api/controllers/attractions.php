@@ -2,11 +2,11 @@
 
 /**
  * Attractions Controller
- * 
+ *
  * Handles attraction-related API endpoints
  */
 
-require_once __DIR__ . '/../config/database.php';
+require_once __DIR__ . '/../../config/database.php';
 
 /**
  * Get Top Rated Attractions
@@ -25,10 +25,10 @@ function top_rated()
 
   try {
     $stmt = $pdo->prepare("
-            SELECT id, name, location, description, image_url, rating, created_at 
-            FROM attractions 
-            WHERE status = 'active' 
-            ORDER BY rating DESC, created_at DESC 
+            SELECT id, name, location, description, image_url, rating, created_at
+            FROM attractions
+            WHERE status = 'active'
+            ORDER BY rating DESC, created_at DESC
             LIMIT ?
         ");
     $stmt->execute([$limit]);
@@ -57,9 +57,9 @@ function index()
 
   try {
     $stmt = $pdo->prepare("
-            SELECT id, name, location, description, image_url, rating, created_at 
-            FROM attractions 
-            WHERE status = 'active' 
+            SELECT id, name, location, description, image_url, rating, created_at
+            FROM attractions
+            WHERE status = 'active'
             ORDER BY created_at DESC
         ");
     $stmt->execute();
@@ -97,8 +97,8 @@ function show($id)
 
   try {
     $stmt = $pdo->prepare("
-            SELECT id, name, location, description, image_url, rating, created_at 
-            FROM attractions 
+            SELECT id, name, location, description, image_url, rating, created_at
+            FROM attractions
             WHERE id = ? AND status = 'active'
         ");
     $stmt->execute([(int)$id]);
@@ -188,7 +188,7 @@ function create()
 
   try {
     $stmt = $pdo->prepare("
-            INSERT INTO attractions (name, location, description, image_url, rating, created_at, status) 
+            INSERT INTO attractions (name, location, description, image_url, rating, created_at, status)
             VALUES (?, ?, ?, ?, ?, ?, 'active')
         ");
     $stmt->execute([$name, $location, $description, $image_url, $rating, $created_at]);

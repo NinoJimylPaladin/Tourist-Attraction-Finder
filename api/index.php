@@ -14,12 +14,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 // Get the requested path
 $path = $_SERVER['REQUEST_URI'];
 $script_name = $_SERVER['SCRIPT_NAME'];
-$base_path = dirname($script_name);
 
-// Remove base path from request URI
-if ($base_path !== '/') {
-  $path = str_replace($base_path, '', $path);
-}
+// Remove script name from request URI
+$path = str_replace($script_name, '', $path);
 
 // Remove query string
 $path = parse_url($path, PHP_URL_PATH);
